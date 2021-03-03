@@ -112,7 +112,7 @@ class _DetailsPageState extends State<DetailsPage> {
                     child: IconButton(
                       icon: Icon(Icons.arrow_back_ios),
                       onPressed: () {
-                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => MyApp()));
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomePage()));
                       },
                     ),
                   )
@@ -403,7 +403,7 @@ class _DetailsPageState extends State<DetailsPage> {
                                                     onPressed: ()
                                                       {
                                                         Navigator.of(context).popUntil((route) => route.isFirst);
-                                                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => MyApp()));
+                                                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomePage()));
                                                       },)
                                                       ],
                                                     ),
@@ -550,7 +550,7 @@ class _DetailsPageState extends State<DetailsPage> {
                                                                       onPressed: ()
                                                                       {
                                                                         Navigator.of(context).popUntil((route) => route.isFirst);
-                                                                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => MyApp()));
+                                                                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomePage()));
                                                                       },)
                                                                   ],
                                                                 ),

@@ -14,19 +14,19 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyApp(),
+      home: HomePage(),
     );
   }
 }
 
 
 
-class MyApp extends StatefulWidget {
+class HomePage extends StatefulWidget {
   @override
-  _MyAppState createState() => _MyAppState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _HomePageState extends State<HomePage> {
 
 
   Model car  = Model("assets/car.jpeg", "Car for sale","The car is for sale at.", "Cars", "OMR 225", "1 day ago",);
@@ -41,7 +41,7 @@ class _MyAppState extends State<MyApp> {
 
     List<Model> models = [car,mac,mac];
 
-    Widget card1(String text, Icon icon, int no,Color color)
+    Widget adStatus(String text, Icon icon, int no,Color color)
     {
       return RaisedButton(
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
@@ -69,7 +69,7 @@ class _MyAppState extends State<MyApp> {
               });
     }
 
-    Widget card2(String text, Color color)
+    Widget category(String text, Color color)
     {
       return RaisedButton(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(m1*0.013)),
@@ -122,9 +122,9 @@ class _MyAppState extends State<MyApp> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    card1("Approved ads", Icon(Icons.check,color: Colors.white,),3,Colors.green),
-                    card1("Rejected adds",Icon(Icons.close,color: Colors.white,),1,Colors.blue),
-                    card1("Pending adds",Icon(Icons.assignment_rounded,color: Colors.white,),1,Colors.orange)
+                    adStatus("Approved ads", Icon(Icons.check,color: Colors.white,),3,Colors.green),
+                    adStatus("Rejected adds",Icon(Icons.close,color: Colors.white,),1,Colors.blue),
+                    adStatus("Pending adds",Icon(Icons.assignment_rounded,color: Colors.white,),1,Colors.orange)
                   ],
                 ),
                 SizedBox(height: m1*0.01,),
@@ -144,25 +144,25 @@ class _MyAppState extends State<MyApp> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          card2("Cars",Colors.green),
-                          card2("Properties",Colors.blue[400]),
-                          card2("Jobs",Colors.orange[400])
+                          category("Cars",Colors.green),
+                          category("Properties",Colors.blue[400]),
+                          category("Jobs",Colors.orange[400])
                         ]
                     ),
                     Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          card2("Electronic",Colors.green),
-                          card2("Mobile",Colors.blue[400]),
-                          card2("Watches",Colors.orange[400])
+                          category("Electronic",Colors.green),
+                          category("Mobile",Colors.blue[400]),
+                          category("Watches",Colors.orange[400])
                         ]
                     ),
                     Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          card2("Laptops",Colors.green),
-                          card2("Lands",Colors.blue[400]),
-                          card2("Apple",Colors.orange[400])
+                          category("Laptops",Colors.green),
+                          category("Lands",Colors.blue[400]),
+                          category("Apple",Colors.orange[400])
                         ]
                     )
                   ]
@@ -196,7 +196,7 @@ class _MyAppState extends State<MyApp> {
                               Navigator.of(context).push(MaterialPageRoute(builder: (context) => DetailsPage(car)));
                             },
                             color: Colors.white,
-                            child: card3(car,m1,m2)
+                            child: modelDetailCard(car,m1,m2)
                         ),
                       ),
                       Positioned(
@@ -224,7 +224,7 @@ class _MyAppState extends State<MyApp> {
                           Navigator.of(context).push(MaterialPageRoute(builder: (context) => DetailsPage(mac)));
                         },
                         color: Colors.white,
-                        child: card3(mac,m1,m2)
+                        child: modelDetailCard(mac,m1,m2)
                     ),
                   ),
                   Positioned(

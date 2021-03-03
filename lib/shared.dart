@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intern_task/model.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-Widget card3(Model model,double m1,double m2)
-
+Widget modelDetailCard(Model model,double m1,double m2)
 {
   return Column(
     children: [

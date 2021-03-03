@@ -160,7 +160,7 @@ class _TabViewState extends State<TabView> {
                           Navigator.of(context).push(MaterialPageRoute(builder: (context) => DetailsPage(models[index])));
                         },
                         color: Colors.white,
-                        child: card3(models[index],m1,m2)
+                        child: modelDetailCard(models[index],m1,m2)
                     ),
                   ),
                   Positioned(
