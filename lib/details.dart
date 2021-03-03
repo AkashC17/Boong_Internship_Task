@@ -402,6 +402,7 @@ class _DetailsPageState extends State<DetailsPage> {
                                                               ))),
                                                     onPressed: ()
                                                       {
+                                                        Navigator.of(context).popUntil((route) => route.isFirst);
                                                         Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => MyApp()));
                                                       },)
                                                       ],
@@ -548,6 +549,7 @@ class _DetailsPageState extends State<DetailsPage> {
                                                                               ))),
                                                                       onPressed: ()
                                                                       {
+                                                                        Navigator.of(context).popUntil((route) => route.isFirst);
                                                                         Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => MyApp()));
                                                                       },)
                                                                   ],
